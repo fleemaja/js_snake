@@ -1,0 +1,56 @@
+html, body, figure, figcaption, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-image: url("../images/snake_skin_background.png");
+}
+
+.logo {
+  font-size: 70px;
+  width: 340px;
+  height: 130px;
+}
+
+h3.length {
+  color: #4A4A4A;
+  font-size: 16px;
+}
+
+figure {
+  display: inline-block;
+  border: 10px solid #4A4A4A;
+  border-radius: 10px;
+  background-color: white;
+}
+
+ul {
+}
+
+ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+li {
+  float: left;
+  width: 20px;
+  height: 20px;
+}
+
+.apple {
+  background: yellow;
+}
+
+.snake {
+  background: #942C8D;
+}

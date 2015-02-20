@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Snake</title>
+    <link rel="stylesheet" type="text/css" href="../css/snake.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <img src="../images/snake_logo.png" class="logo">
+    <h3 class="length">Length: <span id="length">1</span></h3>
+
+    <figure class="snake-game"></figure>
+
+    <script src="../js/jquery-1.9.1.js"></script>
+    <script src="../js/snake.js"></script>
+    <script src="../js/snake-view.js"></script>
+
+    <script>
+      $(function () {
+        new SG.View($(".snake-game"));
+      });
+    </script>
+
+  </body>
+</html>
