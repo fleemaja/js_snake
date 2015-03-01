@@ -4,22 +4,12 @@ html, body, figure, figcaption, ul, li {
   border: 0;
 }
 
-canvas {
-  position: absolute;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
-  z-index:-1;
-}
-
 ul {
   list-style: none;
 }
 
 .background {
   background-image: url("../images/snake_skin_background.png");
-  /*height: 120px;*/
 }
 
 body {
@@ -45,8 +35,14 @@ figure {
   background-color: white;
 }
 
+.game-over {
+  font-size: 28px;
+  font-weight: bold;
+  color: #942C8D;
+}
+
 .message {
-  font-size: 18px;
+  font-size: 22px;
   color: #4A4A4A;
 }
 

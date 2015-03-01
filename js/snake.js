@@ -120,8 +120,13 @@
 
     // destroy snake if it eats itself or runs off grid
     if (!this.isValid()) {
-      this.segments = [];
+      this.resetSnake();
     }
+  };
+
+  Snake.prototype.resetSnake = function() {
+    snakeLength = this.board.snake.segments.length
+    this.segments = [];
   };
 
   Snake.prototype.turn = function (dir) {

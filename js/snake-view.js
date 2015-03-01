@@ -31,9 +31,9 @@
 
     var html = "";
 
-    for (var i = 0; i < this.board.dim; i++) {
+    for (var i = 1; i < this.board.dim; i++) {
       if (i == 10) {
-        html += "<ul class='message'>Press the up key to begin!</ul>";
+        html += "<ul class='game-over'>Press the up key to begin!</ul>";
       } else {
         html += "<ul>";
         for (var j = 0; j < this.board.dim; j++) {
@@ -54,9 +54,11 @@
 
     var html = "";
 
-    for (var i = 0; i < this.board.dim; i++) {
+    for (var i = 1; i < this.board.dim; i++) {
       if (i == 10) {
-        html += "<ul class='message'>Game over! Press the up key to restart!</ul>";
+        html += "<ul class='game-over'>Game over!</ul>";
+      } else if (i == 11) {
+        html += "<ul class='message'>Press the up key to restart!</ul>"
       } else {
         html += "<ul>";
         for (var j = 0; j < this.board.dim; j++) {
@@ -132,6 +134,7 @@
       window.clearInterval(this.intervalId);
 
       View.GAME_STARTED = false;
+      $('#length').html(snakeLength);
       this.deadView(this.$el)
     }
   };
