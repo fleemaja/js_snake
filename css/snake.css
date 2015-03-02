@@ -24,7 +24,7 @@ body {
 }
 
 h3.length {
-  color: #4A4A4A;
+  color: #5A5A5A;
   font-size: 18px;
 }
 
@@ -32,14 +32,14 @@ h3 span#length {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
-  background: #4A4A4A;
+  background: #5A5A5A;
   color: white;
   font-size: 24px;
 }
 
 figure {
   display: inline-block;
-  border: 10px solid #4A4A4A;
+  border: 10px solid #5A5A5A;
   border-radius: 10px;
   background-color: white;
 }
@@ -51,7 +51,7 @@ figure {
 
 .message {
   font-size: 22px;
-  color: #4A4A4A;
+  color: #5A5A5A;
 }
 
 ul {
@@ -65,14 +65,16 @@ ul:after {
 
 li {
   float: left;
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 19px;
 }
 
 .apple {
   background: yellow;
+  border-radius: 7px;
 }
 
 .snake {
   background: #942C8D;
+  border-radius: 7px;
 }
