@@ -25,7 +25,16 @@ body {
 
 h3.length {
   color: #4A4A4A;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+h3 span#length {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  background: #4A4A4A;
+  color: white;
+  font-size: 24px;
 }
 
 figure {
