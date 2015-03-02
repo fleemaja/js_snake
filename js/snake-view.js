@@ -33,7 +33,7 @@
 
     for (var i = 1; i < this.board.dim; i++) {
       if (i == 10) {
-        html += "<ul class='game-over'>Press the up key to begin!</ul>";
+        html += "<ul class='message'>Press the <b class='game-over'>up key</b> to begin!</ul>";
       } else {
         html += "<ul>";
         for (var j = 0; j < this.board.dim; j++) {
@@ -55,9 +55,9 @@
     var html = "";
 
     for (var i = 1; i < this.board.dim; i++) {
-      if (i == 10) {
+      if (i == 9) {
         html += "<ul class='game-over'>Game over!</ul>";
-      } else if (i == 11) {
+      } else if (i == 10) {
         html += "<ul class='message'>Press the up key to restart!</ul>"
       } else {
         html += "<ul>";
