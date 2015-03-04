@@ -44,13 +44,13 @@
   };
 
   Beer.prototype.replace = function () {
-    var x = Math.floor(Math.random() * this.board.dim);
-    var y = Math.floor(Math.random() * this.board.dim);
+    var x = Math.floor(Math.random() * (this.board.dim - 2)) + 1;
+    var y = Math.floor(Math.random() * (this.board.dim - 2)) + 1;
 
-    // Cannot place beer where there is a snake
+    // Cannot place beer where there is a snake or apple
     while (this.board.snake.isOccupying([x, y])) {
-      x = Math.floor(Math.random() * this.board.dim);
-      y = Math.floor(Math.random() * this.board.dim);
+      x = Math.floor(Math.random() * (this.board.dim - 2)) + 1;
+      y = Math.floor(Math.random() * (this.board.dim - 2)) + 1;
     }
 
     this.position = new Coord(x, y);

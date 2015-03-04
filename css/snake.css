@@ -72,10 +72,12 @@ li {
 .apple {
   background: yellow;
   border-radius: 7px;
+  z-index: 99;
 }
 
 .beer, .bourbon, .moonshine, .vodka, .martini {
   background-image: url("../images/alcohol.png");
+  z-index: -1;
 }
 
 .snake {
