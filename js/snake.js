@@ -38,6 +38,24 @@
     this.position = new Coord(x, y);
   };
 
+  var Beer = SG.Beer = function (board) {
+    this.board = board;
+    this.replace();
+  };
+
+  Beer.prototype.replace = function () {
+    var x = Math.floor(Math.random() * this.board.dim);
+    var y = Math.floor(Math.random() * this.board.dim);
+
+    // Cannot place beer where there is a snake
+    while (this.board.snake.isOccupying([x, y])) {
+      x = Math.floor(Math.random() * this.board.dim);
+      y = Math.floor(Math.random() * this.board.dim);
+    }
+
+    this.position = new Coord(x, y);
+  };
+
   var Snake = SG.Snake = function (board) {
     this.dir = "N";
     this.turning = false;
@@ -56,12 +74,23 @@
     "W": new Coord(0, -1)
   };
 
-  Snake.SYMBOL = "S";
   Snake.GROW_TURNS = 3;
 
   Snake.prototype.eatApple = function () {
     if (this.head().equals(this.board.apple.position)) {
       this.growTurns += 3;
+      Snake.DRUNK = false;
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  Snake.DRUNK = false;
+
+  Snake.prototype.drinkBeer = function () {
+    if (this.head().equals(this.board.beer.position)) {
+      Snake.DRUNK = true;
       return true;
     } else {
       return false;
@@ -111,6 +140,10 @@
       this.board.apple.replace();
     }
 
+    if (this.drinkBeer()) {
+      this.board.beer.replace();
+    }
+
     // if not growing, remove tail segment
     if (this.growTurns > 0) {
       this.growTurns -= 1;
@@ -145,38 +178,7 @@
 
     this.snake = new Snake(this);
     this.apple = new Apple(this);
-  };
-
-  Board.BLANK_SYMBOL = ".";
-
-  Board.blankGrid = function (dim) {
-    var grid = [];
-
-    for (var i = 0; i < dim; i++) {
-      var row = [];
-      for (var j = 0; j < dim; j++) {
-        row.push(Board.BLANK_SYMBOL);
-      }
-      grid.push(row);
-    }
-
-    return grid;
-  };
-
-  Board.prototype.render = function () {
-    var grid = Board.blankGrid(this.dim);
-
-    this.snake.segments.forEach(function (segment) {
-      grid[segment.i][segment.j] = Snake.SYMBOL;
-    });
-
-    grid[this.apple.position.i][this.apple.position.j] = Apple.SYMBOL;
-
-    // join it up
-    var rowStrs = [];
-    grid.map(function (row) {
-      return row.join("");
-    }).join("\n");
+    this.beer = new Beer(this);
   };
 
   Board.prototype.validPosition = function (coord) {

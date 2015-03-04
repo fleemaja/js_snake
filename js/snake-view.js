@@ -24,6 +24,8 @@
 
   View.GAME_STARTED = false;
 
+  View.STEP_MILLIS = 100;
+
   View.prototype.welcome = function($el) {
     this.$el = $el;
 
@@ -79,8 +81,6 @@
     37: "W"
   };
 
-  View.STEP_MILLIS = 100;
-
   View.prototype.handleKeyEvent = function (event) {
     if (View.GAME_STARTED) {
       if (View.KEYS[event.keyCode]) {
@@ -97,8 +97,14 @@
   };
 
   View.prototype.render = function () {
-    this.updateClasses(this.board.snake.segments, "snake");
+    if (SG.Snake.DRUNK) {
+      this.$li.filter(".snake").removeClass();
+      this.updateClasses(this.board.snake.segments, "drunk-snake");
+    } else {
+      this.updateClasses(this.board.snake.segments, "snake");
+    }
     this.updateClasses([this.board.apple.position], "apple");
+    this.updateClasses([this.board.beer.position], "beer");
   };
 
   View.prototype.updateClasses = function(coords, className) {
@@ -132,7 +138,7 @@
       this.render();
     } else {
       window.clearInterval(this.intervalId);
-
+      SG.Snake.DRUNK = false;
       View.GAME_STARTED = false;
       $('#length').html(snakeLength);
       this.deadView(this.$el)

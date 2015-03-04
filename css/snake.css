@@ -65,7 +65,7 @@ ul:after {
 
 li {
   float: left;
-  width: 21px;
+  width: 25px;
   height: 19px;
 }
 
@@ -74,7 +74,21 @@ li {
   border-radius: 7px;
 }
 
+.beer {
+  background-image: url("../images/alcohol.png");
+  border-radius: 7px;
+}
+
 .snake {
   background: #942C8D;
   border-radius: 7px;
+}
+
+.drunk-snake {
+  background: #942C8D;
+  border-radius: 7px;
+  border-left: 5px solid yellow;
+  border-right: 5px solid yellow;
+  border-bottom: 2px solid yellow;
+  border-top: 2px solid yellow;
 }
