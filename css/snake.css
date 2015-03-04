@@ -74,15 +74,7 @@ li {
   border-radius: 7px;
 }
 
-.beer {
-  background-image: url("../images/alcohol.png");
-}
-
-.alcohol {
-  background-image: url("../images/alcohol.png");
-}
-
-.moonshine {
+.beer, .bourbon, .moonshine, .vodka, .martini {
   background-image: url("../images/alcohol.png");
 }
 
