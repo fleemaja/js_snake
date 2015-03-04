@@ -76,7 +76,14 @@ li {
 
 .beer {
   background-image: url("../images/alcohol.png");
-  border-radius: 7px;
+}
+
+.alcohol {
+  background-image: url("../images/alcohol.png");
+}
+
+.moonshine {
+  background-image: url("../images/alcohol.png");
 }
 
 .snake {

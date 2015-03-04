@@ -105,6 +105,8 @@
     }
     this.updateClasses([this.board.apple.position], "apple");
     this.updateClasses([this.board.beer.position], "beer");
+    this.updateClasses([this.board.moonshine.position], "moonshine");
+    this.updateClasses([this.board.alcohol.position], "alcohol");
   };
 
   View.prototype.updateClasses = function(coords, className) {

@@ -43,11 +43,47 @@
     this.replace();
   };
 
+  var Alcohol = SG.Alcohol = function (board) {
+    this.board = board;
+    this.replace();
+  };
+
+  var Moonshine = SG.Moonshine = function (board) {
+    this.board = board;
+    this.replace();
+  };
+
   Beer.prototype.replace = function () {
     var x = Math.floor(Math.random() * this.board.dim);
     var y = Math.floor(Math.random() * this.board.dim);
 
     // Cannot place beer where there is a snake
+    while (this.board.snake.isOccupying([x, y])) {
+      x = Math.floor(Math.random() * this.board.dim);
+      y = Math.floor(Math.random() * this.board.dim);
+    }
+
+    this.position = new Coord(x, y);
+  };
+
+  Alcohol.prototype.replace = function () {
+    var x = Math.floor(Math.random() * this.board.dim);
+    var y = Math.floor(Math.random() * this.board.dim);
+
+    // Cannot place alcohol where there is a snake
+    while (this.board.snake.isOccupying([x, y])) {
+      x = Math.floor(Math.random() * this.board.dim);
+      y = Math.floor(Math.random() * this.board.dim);
+    }
+
+    this.position = new Coord(x, y);
+  };
+
+  Moonshine.prototype.replace = function () {
+    var x = Math.floor(Math.random() * this.board.dim);
+    var y = Math.floor(Math.random() * this.board.dim);
+
+    // Cannot place moonshine where there is a snake
     while (this.board.snake.isOccupying([x, y])) {
       x = Math.floor(Math.random() * this.board.dim);
       y = Math.floor(Math.random() * this.board.dim);
@@ -90,6 +126,24 @@
 
   Snake.prototype.drinkBeer = function () {
     if (this.head().equals(this.board.beer.position)) {
+      Snake.DRUNK = true;
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  Snake.prototype.drinkAlcohol = function () {
+    if (this.head().equals(this.board.alcohol.position)) {
+      Snake.DRUNK = true;
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  Snake.prototype.drinkMoonshine = function () {
+    if (this.head().equals(this.board.moonshine.position)) {
       Snake.DRUNK = true;
       return true;
     } else {
@@ -144,6 +198,14 @@
       this.board.beer.replace();
     }
 
+    if (this.drinkAlcohol()) {
+      this.board.alcohol.replace();
+    }
+
+    if (this.drinkMoonshine()) {
+      this.board.moonshine.replace();
+    }
+
     // if not growing, remove tail segment
     if (this.growTurns > 0) {
       this.growTurns -= 1;
@@ -178,7 +240,9 @@
 
     this.snake = new Snake(this);
     this.apple = new Apple(this);
+    this.alcohol = new Alcohol(this);
     this.beer = new Beer(this);
+    this.moonshine = new Moonshine(this);
   };
 
   Board.prototype.validPosition = function (coord) {
