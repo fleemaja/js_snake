@@ -80,6 +80,7 @@
     if (this.head().equals(this.board.apple.position)) {
       this.growTurns += 3;
       Snake.DRUNK = false;
+      $('figure').removeAttr('style');
       return true;
     } else {
       return false;
@@ -91,6 +92,8 @@
   Snake.prototype.drinkBeer = function () {
     if (this.head().equals(this.board.beer.position)) {
       Snake.DRUNK = true;
+      $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
+      $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
     } else {
       return false;
@@ -100,6 +103,8 @@
   Snake.prototype.drinkMoonshine = function () {
     if (this.head().equals(this.board.moonshine.position)) {
       Snake.DRUNK = true;
+      $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
+      $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
     } else {
       return false;
@@ -109,6 +114,8 @@
   Snake.prototype.drinkVodka = function () {
     if (this.head().equals(this.board.vodka.position)) {
       Snake.DRUNK = true;
+      $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
+      $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
     } else {
       return false;
@@ -118,6 +125,8 @@
   Snake.prototype.drinkMartini = function () {
     if (this.head().equals(this.board.martini.position)) {
       Snake.DRUNK = true;
+      $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
+      $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
     } else {
       return false;
@@ -127,6 +136,8 @@
   Snake.prototype.drinkBourbon = function () {
     if (this.head().equals(this.board.bourbon.position)) {
       Snake.DRUNK = true;
+      $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
+      $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
     } else {
       return false;

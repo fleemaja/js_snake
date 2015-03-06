@@ -144,6 +144,7 @@
       window.clearInterval(this.intervalId);
       SG.Snake.DRUNK = false;
       View.GAME_STARTED = false;
+      $('figure').removeAttr('style');
       $('#length').html(snakeLength);
       this.deadView(this.$el)
     }

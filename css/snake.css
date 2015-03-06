@@ -44,6 +44,16 @@ figure {
   background-color: white;
 }
 
+figure .wonky {
+  display: inline-block;
+  border: 10px solid #5A5A5A;
+  border-radius: 10px;
+  background-color: white;
+  -ms-transform: rotate(7deg); /* IE 9 */
+  -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+  transform: rotate(7deg);
+}
+
 .bold-purple {
   font-size: 28px;
   color: #942C8D;
@@ -92,4 +102,42 @@ li {
   border-right: 5px solid yellow;
   border-bottom: 2px solid yellow;
   border-top: 2px solid yellow;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    0%   {background: red; opacity: 0.7;
+    -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
+    transform: rotate(7deg)}
+    25%  {background: yellow; opacity: 0.7;
+    -ms-transform: rotate(-7deg); -webkit-transform: rotate(-7deg);
+    transform: rotate(-7deg)}
+    50%  {background: blue; opacity: 0.7;
+    -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
+    transform: rotate(7deg)}
+    75%  {background: green; opacity: 0.7;
+      -ms-transform: rotate(-7deg); -webkit-transform: rotate(-7deg);
+    transform: rotate(-7deg)}
+    100% {background: red; opacity: 0.7;
+      -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
+      transform: rotate(7deg)}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    0%   {background: red; opacity: 0.7;
+      -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
+      transform: rotate(7deg)}
+    25%  {background: yellow; opacity: 0.7;
+      -ms-transform: rotate(-7deg); -webkit-transform: rotate(-7deg);
+      transform: rotate(-7deg)}
+    50%  {background: blue; opacity: 0.7;
+      -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
+    transform: rotate(7deg)}
+    75%  {background: green; opacity: 0.7;
+      -ms-transform: rotate(-7deg); -webkit-transform: rotate(-7deg);
+    transform: rotate(-7deg)}
+    100% {background: red; opacity: 0.7;
+      -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
+      transform: rotate(7deg)}
 }
