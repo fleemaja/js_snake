@@ -107,37 +107,37 @@ li {
 /* Chrome, Safari, Opera */
 @-webkit-keyframes myfirst {
     0%   {background: red; opacity: 0.7;
-    -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
-    transform: rotate(7deg)}
+    -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
+    transform: rotate(10deg)}
     25%  {background: yellow; opacity: 0.7;
-    -ms-transform: rotate(-7deg); -webkit-transform: rotate(-7deg);
-    transform: rotate(-7deg)}
+    -ms-transform: rotate(-10deg); -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg)}
     50%  {background: blue; opacity: 0.7;
-    -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
-    transform: rotate(7deg)}
+    -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
+    transform: rotate(10deg)}
     75%  {background: green; opacity: 0.7;
-      -ms-transform: rotate(-7deg); -webkit-transform: rotate(-7deg);
-    transform: rotate(-7deg)}
+      -ms-transform: rotate(-10deg); -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg)}
     100% {background: red; opacity: 0.7;
-      -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
-      transform: rotate(7deg)}
+      -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
+      transform: rotate(10deg)}
 }
 
 /* Standard syntax */
 @keyframes myfirst {
     0%   {background: red; opacity: 0.7;
-      -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
-      transform: rotate(7deg)}
+      -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
+      transform: rotate(10deg)}
     25%  {background: yellow; opacity: 0.7;
-      -ms-transform: rotate(-7deg); -webkit-transform: rotate(-7deg);
-      transform: rotate(-7deg)}
+      -ms-transform: rotate(-10deg); -webkit-transform: rotate(-10deg);
+      transform: rotate(-10deg)}
     50%  {background: blue; opacity: 0.7;
-      -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
-    transform: rotate(7deg)}
+      -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
+    transform: rotate(10deg)}
     75%  {background: green; opacity: 0.7;
-      -ms-transform: rotate(-7deg); -webkit-transform: rotate(-7deg);
-    transform: rotate(-7deg)}
+      -ms-transform: rotate(-10deg); -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg)}
     100% {background: red; opacity: 0.7;
-      -ms-transform: rotate(7deg); -webkit-transform: rotate(7deg);
-      transform: rotate(7deg)}
+      -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
+      transform: rotate(10deg)}
 }
