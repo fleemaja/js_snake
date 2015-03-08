@@ -26,13 +26,13 @@
   };
 
   Apple.prototype.replace = function () {
-    var x = Math.floor(Math.random() * this.board.dim);
-    var y = Math.floor(Math.random() * this.board.dim);
+    var x = Math.floor(Math.random() * this.board.dim[0]);
+    var y = Math.floor(Math.random() * this.board.dim[1]);
 
     // Cannot place an apple where there is a snake
     while (this.board.snake.isOccupying([x, y])) {
-      x = Math.floor(Math.random() * this.board.dim);
-      y = Math.floor(Math.random() * this.board.dim);
+      x = Math.floor(Math.random() * this.board.dim[0]);
+      y = Math.floor(Math.random() * this.board.dim[1]);
     }
 
     this.position = new Coord(x, y);
@@ -44,13 +44,13 @@
   };
 
   Beer.prototype.replace = function () {
-    var x = Math.floor(Math.random() * (this.board.dim - 2)) + 1;
-    var y = Math.floor(Math.random() * (this.board.dim - 2)) + 1;
+    var x = Math.floor(Math.random() * (this.board.dim[0] - 2)) + 1;
+    var y = Math.floor(Math.random() * (this.board.dim[1] - 2)) + 1;
 
     // Cannot place beer where there is a snake or apple
     while (this.board.snake.isOccupying([x, y])) {
-      x = Math.floor(Math.random() * (this.board.dim - 2)) + 1;
-      y = Math.floor(Math.random() * (this.board.dim - 2)) + 1;
+      x = Math.floor(Math.random() * (this.board.dim[0] - 2)) + 1;
+      y = Math.floor(Math.random() * (this.board.dim[1] - 2)) + 1;
     }
 
     this.position = new Coord(x, y);
@@ -61,10 +61,10 @@
     this.turning = false;
     this.board = board;
 
-    var center = new Coord(Math.floor(board.dim/2), Math.floor(board.dim/2));
+    var center = new Coord(Math.floor(board.dim[1]/2), Math.floor(board.dim[0]/2));
     this.segments = [center];
 
-    this.growTurns = 0;
+    this.growTurns = 3;
   };
 
   Snake.DIFFS = {
@@ -249,7 +249,7 @@
   };
 
   Board.prototype.validPosition = function (coord) {
-    return (coord.i >= 0) && (coord.i < this.dim) &&
-      (coord.j >= 0) && (coord.j < this.dim);
+    return (coord.i >= 0) && (coord.i < this.dim[0]) &&
+      (coord.j >= 0) && (coord.j < this.dim[1]);
   };
 })();

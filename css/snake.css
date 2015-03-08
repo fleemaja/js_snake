@@ -9,7 +9,7 @@ ul {
 }
 
 .background {
-  background-image: url("../images/snake_skin_background.png");
+  /*background-image: url("../images/snake_skin_background.png");*/
 }
 
 body {
@@ -18,40 +18,29 @@ body {
 }
 
 .logo {
-  font-size: 70px;
   width: 310px;
   height: 110px;
 }
 
 h3.length {
-  color: #5A5A5A;
-  font-size: 18px;
+  color: #942C8D;
+  font-size: 24px;
 }
 
 h3 span#length {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   border-radius: 10px;
   background: #5A5A5A;
   color: white;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 figure {
   display: inline-block;
   border: 10px solid #5A5A5A;
   border-radius: 10px;
-  background-color: white;
-}
-
-figure .wonky {
-  display: inline-block;
-  border: 10px solid #5A5A5A;
-  border-radius: 10px;
-  background-color: white;
-  -ms-transform: rotate(7deg); /* IE 9 */
-  -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
-  transform: rotate(7deg);
+  background-color: #FAF6FF;
 }
 
 .bold-purple {
@@ -79,8 +68,20 @@ li {
   height: 19px;
 }
 
+/*@media screen and (min-width: 1600px) {
+   li { width: 35px; height: 24px; }
+   .beer, .bourbon, .moonshine, .vodka, .martini {
+     background-image: url("../images/bigger_alcohol.png");
+   }
+   .message { font-size: 32px; }
+   .bold-purple { font-size: 38px; }
+   h3 span#length { font-size: 34px; }
+   h3.length { font-size: 24px; }
+   .logo { width: 510px; height: 210px; }
+}*/
+
 .apple {
-  background: yellow;
+  background: #FFCC00;
   border-radius: 7px;
   z-index: 99;
 }
@@ -98,10 +99,10 @@ li {
 .drunk-snake {
   background: #942C8D;
   border-radius: 7px;
-  border-left: 5px solid yellow;
-  border-right: 5px solid yellow;
-  border-bottom: 2px solid yellow;
-  border-top: 2px solid yellow;
+  border-left: 1px solid yellow;
+  border-right: 1px solid yellow;
+  border-bottom: 1px solid yellow;
+  border-top: 1px solid yellow;
 }
 
 /* Chrome, Safari, Opera */

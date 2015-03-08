@@ -8,7 +8,7 @@
 
       this.$el = $el;
 
-      this.board = new SG.Board(20);
+      this.board = new SG.Board([18, 32]);
       this.setupGrid();
 
       this.intervalId = window.setInterval(
@@ -29,16 +29,16 @@
   View.prototype.welcome = function($el) {
     this.$el = $el;
 
-    this.board = new SG.Board(20);
+    this.board = new SG.Board([18, 32]);
 
     var html = "";
 
-    for (var i = 1; i < this.board.dim; i++) {
-      if (i == 10) {
+    for (var i = 0; i < this.board.dim[0]; i++) {
+      if (i == 8) {
         html += "<ul class='message'>Press the <b class='bold-purple'>up key</b> to begin!</ul>";
       } else {
         html += "<ul>";
-        for (var j = 0; j < this.board.dim; j++) {
+        for (var j = 0; j < this.board.dim[1]; j++) {
           html += "<li></li>";
         }
         html += "</ul>";
@@ -52,18 +52,18 @@
   View.prototype.deadView = function($el) {
     this.$el = $el;
 
-    this.board = new SG.Board(20);
+    this.board = new SG.Board([18, 32]);
 
     var html = "";
 
-    for (var i = 1; i < this.board.dim; i++) {
-      if (i == 9) {
+    for (var i = 0; i < this.board.dim[0]; i++) {
+      if (i == 8) {
         html += "<ul class='bold-purple'><b>Game over!</b></ul>";
-      } else if (i == 10) {
+      } else if (i == 9) {
         html += "<ul class='message'>Press the up key to restart!</ul>"
       } else {
         html += "<ul>";
-        for (var j = 0; j < this.board.dim; j++) {
+        for (var j = 0; j < this.board.dim[1]; j++) {
           html += "<li></li>";
         }
         html += "</ul>";
@@ -115,7 +115,7 @@
     this.$li.filter("." + className).removeClass();
 
     coords.forEach(function(coord){
-      var flatCoord = (coord.i * this.board.dim) + coord.j;
+      var flatCoord = (coord.i * this.board.dim[1]) + coord.j;
       this.$li.eq(flatCoord).addClass(className);
     }.bind(this));
   };
@@ -123,9 +123,9 @@
   View.prototype.setupGrid = function () {
     var html = "";
 
-    for (var i = 0; i < this.board.dim; i++) {
+    for (var i = 0; i < this.board.dim[0]; i++) {
       html += "<ul>";
-      for (var j = 0; j < this.board.dim; j++) {
+      for (var j = 0; j < this.board.dim[1]; j++) {
         html += "<li></li>";
       }
       html += "</ul>";
