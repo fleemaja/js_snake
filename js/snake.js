@@ -64,7 +64,7 @@
     var center = new Coord(Math.floor(board.dim[1]/2), Math.floor(board.dim[0]/2));
     this.segments = [center];
 
-    this.growTurns = 3;
+    this.growTurns = 0;
   };
 
   Snake.DIFFS = {

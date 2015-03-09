@@ -8,10 +8,6 @@ ul {
   list-style: none;
 }
 
-.background {
-  /*background-image: url("../images/snake_skin_background.png");*/
-}
-
 body {
   font-family: sans-serif;
   text-align: center;
@@ -65,30 +61,16 @@ ul:after {
 li {
   float: left;
   width: 25px;
-  height: 19px;
+  height: 20px;
 }
-
-/*@media screen and (min-width: 1600px) {
-   li { width: 35px; height: 24px; }
-   .beer, .bourbon, .moonshine, .vodka, .martini {
-     background-image: url("../images/bigger_alcohol.png");
-   }
-   .message { font-size: 32px; }
-   .bold-purple { font-size: 38px; }
-   h3 span#length { font-size: 34px; }
-   h3.length { font-size: 24px; }
-   .logo { width: 510px; height: 210px; }
-}*/
 
 .apple {
   background: #FFCC00;
   border-radius: 7px;
-  z-index: 99;
 }
 
 .beer, .bourbon, .moonshine, .vodka, .martini {
   background-image: url("../images/alcohol.png");
-  z-index: -1;
 }
 
 .snake {
@@ -97,6 +79,8 @@ li {
 }
 
 .drunk-snake {
+  height: 19px;
+  width: 23px;
   background: #942C8D;
   border-radius: 7px;
   border-left: 1px solid yellow;
