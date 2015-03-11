@@ -103,6 +103,8 @@
     } else {
       this.updateClasses(this.board.snake.segments, "snake");
     }
+    this.updateClasses([this.board.magicApple.position], "magic-apple");
+    this.updateClasses([this.board.magic.position], "magic");
     this.updateClasses([this.board.apple.position], "apple");
     this.updateClasses([this.board.beer.position], "beer");
     this.updateClasses([this.board.moonshine.position], "moonshine");

@@ -25,6 +25,42 @@
     this.replace();
   };
 
+  var MagicApple = SG.MagicApple = function (board) {
+    this.board = board;
+    this.replace();
+  };
+
+  var Magic = SG.Magic = function (board) {
+    this.board = board;
+    this.replace();
+  };
+
+  MagicApple.prototype.replace = function () {
+    var x = Math.floor(Math.random() * this.board.dim[0]);
+    var y = Math.floor(Math.random() * this.board.dim[1]);
+
+    // Cannot place an apple where there is a snake
+    while (this.board.snake.isOccupying([x, y])) {
+      x = Math.floor(Math.random() * this.board.dim[0]);
+      y = Math.floor(Math.random() * this.board.dim[1]);
+    }
+
+    this.position = new Coord(x, y);
+  };
+
+  Magic.prototype.replace = function () {
+    var x = Math.floor(Math.random() * this.board.dim[0]);
+    var y = Math.floor(Math.random() * this.board.dim[1]);
+
+    // Cannot place an apple where there is a snake
+    while (this.board.snake.isOccupying([x, y])) {
+      x = Math.floor(Math.random() * this.board.dim[0]);
+      y = Math.floor(Math.random() * this.board.dim[1]);
+    }
+
+    this.position = new Coord(x, y);
+  };
+
   Apple.prototype.replace = function () {
     var x = Math.floor(Math.random() * this.board.dim[0]);
     var y = Math.floor(Math.random() * this.board.dim[1]);
@@ -78,6 +114,28 @@
 
   Snake.prototype.eatApple = function () {
     if (this.head().equals(this.board.apple.position)) {
+      this.growTurns += 3;
+      Snake.DRUNK = false;
+      $('figure').removeAttr('style');
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  Snake.prototype.eatMagicApple = function () {
+    if (this.head().equals(this.board.magicApple.position)) {
+      this.growTurns += 3;
+      Snake.DRUNK = false;
+      $('figure').removeAttr('style');
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  Snake.prototype.eatMagic = function () {
+    if (this.head().equals(this.board.magic.position)) {
       this.growTurns += 3;
       Snake.DRUNK = false;
       $('figure').removeAttr('style');
@@ -187,6 +245,14 @@
       this.board.apple.replace();
     }
 
+    if (this.eatMagicApple()) {
+      this.board.magicApple.replace();
+    }
+
+    if (this.eatMagic()) {
+      this.board.magic.replace();
+    }
+
     if (this.drinkBeer()) {
       this.board.beer.replace();
     }
@@ -241,6 +307,8 @@
 
     this.snake = new Snake(this);
     this.apple = new Apple(this);
+    this.magicApple = new MagicApple(this);
+    this.magic = new Magic(this);
     this.beer = new Beer(this);
     this.vodka = new Beer(this);
     this.moonshine = new Beer(this);

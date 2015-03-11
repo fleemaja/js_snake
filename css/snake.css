@@ -34,7 +34,7 @@ h3 span#length {
 
 figure {
   display: inline-block;
-  border: 10px solid #5A5A5A;
+  border: 1px solid #5A5A5A;
   border-radius: 10px;
   background-color: #FAF6FF;
 }
@@ -64,29 +64,34 @@ li {
   height: 20px;
 }
 
-.apple {
-  background: #FFCC00;
-  border-radius: 7px;
-}
-
 .beer, .bourbon, .moonshine, .vodka, .martini {
   background-image: url("../images/alcohol.png");
 }
 
 .snake {
-  background: #942C8D;
-  border-radius: 7px;
+  /*border-radius: 10px;*/
+  -webkit-animation: mythird 5s linear 0s infinite alternate;
+  animation: mythird 5s linear 0s infinite alternate;
 }
 
 .drunk-snake {
-  height: 19px;
-  width: 23px;
-  background: #942C8D;
-  border-radius: 7px;
-  border-left: 1px solid yellow;
-  border-right: 1px solid yellow;
-  border-bottom: 1px solid yellow;
-  border-top: 1px solid yellow;
+  /*border-radius: 10px;*/
+  background: black;
+}
+
+.apple {
+  -webkit-animation: mysecond 5s linear 0s infinite alternate;
+  animation: mysecond 5s linear 0s infinite alternate;
+}
+
+.magic-apple {
+  -webkit-animation: mysecond 5s linear 0s infinite alternate;
+  animation: mysecond 5s linear 0s infinite alternate;
+}
+
+.magic {
+  -webkit-animation: mysecond 5s linear 0s infinite alternate;
+  animation: mysecond 5s linear 0s infinite alternate;
 }
 
 /* Chrome, Safari, Opera */
@@ -125,4 +130,40 @@ li {
     100% {background: red; opacity: 0.7;
       -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
       transform: rotate(10deg)}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mysecond {
+    0%   {background: #42B3EB; opacity: 0.7;}
+    25%  {background: #72EC45; opacity: 0.7;}
+    50%  {background: #FF5A47; opacity: 0.7;}
+    75%  {background: #FFE1B5; opacity: 0.7;}
+    100% {background: #B5DAFF; opacity: 0.7;}
+}
+
+/* Standard syntax */
+@keyframes mysecond {
+  0%   {background: #42B3EB; opacity: 0.7;}
+  25%  {background: #72EC45; opacity: 0.7;}
+  50%  {background: #FF5A47; opacity: 0.7;}
+  75%  {background: #FFE1B5; opacity: 0.7;}
+  100% {background: #B5DAFF; opacity: 0.7;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mythird {
+    0%   {background: red; opacity: 0.7;}
+    25%  {background: yellow; opacity: 0.7;}
+    50%  {background: blue; opacity: 0.7;}
+    75%  {background: green; opacity: 0.7;}
+    100% {background: red; opacity: 0.7;}
+}
+
+/* Standard syntax */
+@keyframes mythird {
+  0%   {background: red; opacity: 0.7;}
+  25%  {background: yellow; opacity: 0.7;}
+  50%  {background: blue; opacity: 0.7;}
+  75%  {background: green; opacity: 0.7;}
+  100% {background: red; opacity: 0.7;}
 }
