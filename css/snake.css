@@ -65,7 +65,8 @@ li {
   height: 20px;
 }
 
-.beer, .bourbon, .moonshine, .vodka, .martini {
+.beer, .bourbon, .moonshine, .vodka,
+.martini, .appletini, .margarita {
   background-image: url("../images/alcohol.png");
 }
 

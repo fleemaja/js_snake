@@ -111,6 +111,8 @@
     this.updateClasses([this.board.vodka.position], "vodka");
     this.updateClasses([this.board.bourbon.position], "bourbon");
     this.updateClasses([this.board.martini.position], "martini");
+    this.updateClasses([this.board.margarita.position], "margarita");
+    this.updateClasses([this.board.appletini.position], "appletini");
   };
 
   View.prototype.updateClasses = function(coords, className) {

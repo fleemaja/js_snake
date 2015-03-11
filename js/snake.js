@@ -25,42 +25,6 @@
     this.replace();
   };
 
-  var MagicApple = SG.MagicApple = function (board) {
-    this.board = board;
-    this.replace();
-  };
-
-  var Magic = SG.Magic = function (board) {
-    this.board = board;
-    this.replace();
-  };
-
-  MagicApple.prototype.replace = function () {
-    var x = Math.floor(Math.random() * this.board.dim[0]);
-    var y = Math.floor(Math.random() * this.board.dim[1]);
-
-    // Cannot place an apple where there is a snake
-    while (this.board.snake.isOccupying([x, y])) {
-      x = Math.floor(Math.random() * this.board.dim[0]);
-      y = Math.floor(Math.random() * this.board.dim[1]);
-    }
-
-    this.position = new Coord(x, y);
-  };
-
-  Magic.prototype.replace = function () {
-    var x = Math.floor(Math.random() * this.board.dim[0]);
-    var y = Math.floor(Math.random() * this.board.dim[1]);
-
-    // Cannot place an apple where there is a snake
-    while (this.board.snake.isOccupying([x, y])) {
-      x = Math.floor(Math.random() * this.board.dim[0]);
-      y = Math.floor(Math.random() * this.board.dim[1]);
-    }
-
-    this.position = new Coord(x, y);
-  };
-
   Apple.prototype.replace = function () {
     var x = Math.floor(Math.random() * this.board.dim[0]);
     var y = Math.floor(Math.random() * this.board.dim[1]);
@@ -202,6 +166,28 @@
     }
   };
 
+  Snake.prototype.drinkMargarita = function () {
+    if (this.head().equals(this.board.margarita.position)) {
+      Snake.DRUNK = true;
+      $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
+      $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  Snake.prototype.drinkAppletini = function () {
+    if (this.head().equals(this.board.appletini.position)) {
+      Snake.DRUNK = true;
+      $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
+      $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   Snake.prototype.isOccupying = function (array) {
     var result = false;
     this.segments.forEach(function (segment) {
@@ -273,6 +259,14 @@
       this.board.martini.replace();
     }
 
+    if (this.drinkAppletini()) {
+      this.board.appletini.replace();
+    }
+
+    if (this.drinkMargarita()) {
+      this.board.margarita.replace();
+    }
+
     // if not growing, remove tail segment
     if (this.growTurns > 0) {
       this.growTurns -= 1;
@@ -307,13 +301,15 @@
 
     this.snake = new Snake(this);
     this.apple = new Apple(this);
-    this.magicApple = new MagicApple(this);
-    this.magic = new Magic(this);
+    this.magicApple = new Apple(this);
+    this.magic = new Apple(this);
     this.beer = new Beer(this);
     this.vodka = new Beer(this);
     this.moonshine = new Beer(this);
     this.martini = new Beer(this);
     this.bourbon = new Beer(this);
+    this.appletini = new Beer(this);
+    this.margarita = new Beer(this);
   };
 
   Board.prototype.validPosition = function (coord) {
