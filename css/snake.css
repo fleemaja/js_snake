@@ -78,7 +78,8 @@ li {
 
 .drunk-snake {
   /*border-radius: 10px;*/
-  background: black;
+  -webkit-animation: mysecond 5s linear 0s infinite alternate;
+  animation: mysecond 5s linear 0s infinite alternate;
 }
 
 .apple {
