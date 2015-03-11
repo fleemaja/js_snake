@@ -40,12 +40,12 @@ figure {
 }
 
 .bold-purple {
-  font-size: 28px;
+  font-size: 36px;
   color: #942C8D;
 }
 
 .message {
-  font-size: 22px;
+  font-size: 28px;
   color: #5A5A5A;
 }
 
@@ -97,39 +97,39 @@ li {
 /* Chrome, Safari, Opera */
 @-webkit-keyframes myfirst {
     0%   {background: red; opacity: 0.7;
-    -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
-    transform: rotate(10deg)}
+    -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
+    transform: rotate(17deg)}
     25%  {background: yellow; opacity: 0.7;
-    -ms-transform: rotate(-10deg); -webkit-transform: rotate(-10deg);
-    transform: rotate(-10deg)}
+    -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
+    transform: rotate(-17deg)}
     50%  {background: blue; opacity: 0.7;
-    -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
-    transform: rotate(10deg)}
+    -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
+    transform: rotate(17deg)}
     75%  {background: green; opacity: 0.7;
-      -ms-transform: rotate(-10deg); -webkit-transform: rotate(-10deg);
-    transform: rotate(-10deg)}
+      -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
+    transform: rotate(-17deg)}
     100% {background: red; opacity: 0.7;
-      -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
-      transform: rotate(10deg)}
+      -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
+      transform: rotate(17deg)}
 }
 
 /* Standard syntax */
 @keyframes myfirst {
     0%   {background: red; opacity: 0.7;
-      -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
-      transform: rotate(10deg)}
+      -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
+      transform: rotate(17deg)}
     25%  {background: yellow; opacity: 0.7;
-      -ms-transform: rotate(-10deg); -webkit-transform: rotate(-10deg);
-      transform: rotate(-10deg)}
+      -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
+      transform: rotate(-17deg)}
     50%  {background: blue; opacity: 0.7;
-      -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
-    transform: rotate(10deg)}
+      -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
+    transform: rotate(17deg)}
     75%  {background: green; opacity: 0.7;
-      -ms-transform: rotate(-10deg); -webkit-transform: rotate(-10deg);
-    transform: rotate(-10deg)}
+      -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
+    transform: rotate(-17deg)}
     100% {background: red; opacity: 0.7;
-      -ms-transform: rotate(10deg); -webkit-transform: rotate(10deg);
-      transform: rotate(10deg)}
+      -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
+      transform: rotate(17deg)}
 }
 
 /* Chrome, Safari, Opera */
