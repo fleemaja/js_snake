@@ -41,7 +41,8 @@ figure {
 
 .bold-purple {
   font-size: 56px;
-  color: #942C8D;
+  -webkit-animation: myfourth 5s linear 0s infinite alternate;
+  animation: myfourth 5s linear 0s infinite alternate;
 }
 
 .message {
@@ -166,4 +167,22 @@ li {
   50%  {background: blue; opacity: 0.7;}
   75%  {background: green; opacity: 0.7;}
   100% {background: red; opacity: 0.7;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfourth {
+    0%   {color: #42B3EB; opacity: 0.7;}
+    25%  {color: #72EC45; opacity: 0.7;}
+    50%  {color: #FF5A47; opacity: 0.7;}
+    75%  {color: #FFE1B5; opacity: 0.7;}
+    100% {color: #B5DAFF; opacity: 0.7;}
+}
+
+/* Standard syntax */
+@keyframes myfourth {
+  0%   {color: #42B3EB; opacity: 0.7;}
+  25%  {color: #72EC45; opacity: 0.7;}
+  50%  {color: #FF5A47; opacity: 0.7;}
+  75%  {color: #FFE1B5; opacity: 0.7;}
+  100% {color: #B5DAFF; opacity: 0.7;}
 }
