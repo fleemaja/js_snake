@@ -87,12 +87,7 @@ li {
   animation: mysecond 5s linear 0s infinite alternate;
 }
 
-.magic-apple {
-  -webkit-animation: mysecond 5s linear 0s infinite alternate;
-  animation: mysecond 5s linear 0s infinite alternate;
-}
-
-.magic {
+.magic-apple, .magic {
   -webkit-animation: mysecond 5s linear 0s infinite alternate;
   animation: mysecond 5s linear 0s infinite alternate;
 }
