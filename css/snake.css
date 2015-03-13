@@ -68,16 +68,15 @@ li {
 .beer, .bourbon, .moonshine, .vodka,
 .martini, .appletini, .margarita {
   background-image: url("../images/alcohol.png");
+  opacity: 0.7;
 }
 
 .snake {
-  /*border-radius: 10px;*/
   -webkit-animation: mythird 5s linear 0s infinite alternate;
   animation: mythird 5s linear 0s infinite alternate;
 }
 
 .drunk-snake {
-  /*border-radius: 10px;*/
   -webkit-animation: mysecond 5s linear 0s infinite alternate;
   animation: mysecond 5s linear 0s infinite alternate;
 }

@@ -56,7 +56,7 @@
 
     var html = "";
 
-    for (var i = 2; i < this.board.dim[0]; i++) {
+    for (var i = 3; i < this.board.dim[0]; i++) {
       if (i == 9) {
         html += "<ul class='bold-purple'><b>Game over!</b></ul>";
       } else if (i == 10) {
