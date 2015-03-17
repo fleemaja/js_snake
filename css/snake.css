@@ -73,8 +73,8 @@ li {
 }
 
 .snake {
-  -webkit-animation: mythird 5s linear 0s infinite alternate;
-  animation: mythird 5s linear 0s infinite alternate;
+  -webkit-animation: mysecond 5s linear 0s infinite alternate;
+  animation: mysecond 5s linear 0s infinite alternate;
 }
 
 .drunk-snake {
