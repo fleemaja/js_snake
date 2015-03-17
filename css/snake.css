@@ -16,6 +16,7 @@ body {
 .logo {
   width: 360px;
   height: 130px;
+  opacity: 0.7;
 }
 
 h3.length {
@@ -81,12 +82,7 @@ li {
   animation: mysecond 5s linear 0s infinite alternate;
 }
 
-.apple {
-  -webkit-animation: mysecond 5s linear 0s infinite alternate;
-  animation: mysecond 5s linear 0s infinite alternate;
-}
-
-.magic-apple, .magic {
+.apple, .magic-apple, .magic {
   -webkit-animation: mysecond 5s linear 0s infinite alternate;
   animation: mysecond 5s linear 0s infinite alternate;
 }
