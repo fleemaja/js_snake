@@ -24,7 +24,7 @@
 
   View.GAME_STARTED = false;
 
-  View.STEP_MILLIS = 100;
+  View.STEP_MILLIS = 50;
 
   View.prototype.welcome = function($el) {
     this.$el = $el;
@@ -103,8 +103,11 @@
     } else {
       this.updateClasses(this.board.snake.segments, "snake");
     }
-    this.updateClasses([this.board.magicApple.position], "magic-apple");
+    this.updateClasses([this.board.coffee.position], "coffee");
+    this.updateClasses([this.board.espresso.position], "espresso");
+    this.updateClasses([this.board.latte.position], "latte");
     this.updateClasses([this.board.magic.position], "magic");
+    this.updateClasses([this.board.magicApple.position], "magic-apple");
     this.updateClasses([this.board.apple.position], "apple");
     this.updateClasses([this.board.beer.position], "beer");
     this.updateClasses([this.board.moonshine.position], "moonshine");
@@ -141,12 +144,34 @@
 
   View.prototype.step = function () {
     if (this.board.snake.segments.length > 0) {
-      this.board.snake.move();
+      if (SG.Snake.COFFEE) {
+        this.board.snake.move();
+      } else if (this.board.index % 2 === 0) {
+        this.board.snake.move();
+      }
+
+      if (this.board.index % 10 === 0 && SG.Snake.DRUNK) {
+        this.board.apple.move();
+        this.board.coffee.move();
+        this.board.espresso.move();
+        this.board.latte.move();
+        this.board.magic.move();
+        this.board.magicApple.move();
+        this.board.appletini.move();
+        this.board.margarita.move();
+        this.board.martini.move();
+        this.board.bourbon.move();
+        this.board.vodka.move();
+        this.board.moonshine.move();
+        this.board.beer.move();
+      }
+      this.board.index += 1;
       $('#length').html(this.board.snake.segments.length);
       this.render();
     } else {
       window.clearInterval(this.intervalId);
       SG.Snake.DRUNK = false;
+      SG.Snake.COFFEE = false;
       View.GAME_STARTED = false;
       $('figure').removeAttr('style');
       $('#length').html(snakeLength);

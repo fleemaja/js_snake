@@ -21,8 +21,52 @@
   };
 
   var Apple = SG.Apple = function (board) {
+    this.dir = "N";
     this.board = board;
     this.replace();
+  };
+
+  Apple.DIFFS = {
+    "N": new Coord(-1, 0),
+    "E": new Coord(0, 1),
+    "S": new Coord(1, 0),
+    "W": new Coord(0, -1)
+  };
+
+  Apple.prototype.move = function () {
+    var newPos = this.position.plus(Apple.DIFFS[this.dir]);
+    if (this.validPos(newPos)) {
+      if (!newPos.equals(this.board.snake.head().plus(Snake.DIFFS[this.board.snake.dir]))) {
+        this.position = newPos;
+      }
+    }
+    var z = Math.floor(Math.random() * 4);
+
+    if (z === 0) {
+      this.dir = "N";
+    } else if (z === 1) {
+      this.dir = "W";
+    } else if (z === 2) {
+      this.dir = "S";
+    } else {
+      this.dir = "E";
+    }
+  };
+
+  Apple.prototype.validPos = function (coord) {
+    var result = true
+    if (!this.board.validPosition(coord)) {
+      result = false;
+    } else {
+      this.board.snake.segments.forEach(function (segment) {
+        if (segment.equals(coord)) {
+          result = false;
+          return result;
+        }
+      })
+    }
+
+    return result;
   };
 
   Apple.prototype.replace = function () {
@@ -39,8 +83,52 @@
   };
 
   var Beer = SG.Beer = function (board) {
+    this.dir = "N";
     this.board = board;
     this.replace();
+  };
+
+  Beer.DIFFS = {
+    "N": new Coord(-1, 0),
+    "E": new Coord(0, 1),
+    "S": new Coord(1, 0),
+    "W": new Coord(0, -1)
+  };
+
+  Beer.prototype.move = function () {
+    var newPos = this.position.plus(Beer.DIFFS[this.dir]);
+    if (this.validPos(newPos)) {
+      if (!newPos.equals(this.board.snake.head().plus(Snake.DIFFS[this.board.snake.dir]))) {
+        this.position = newPos;
+      }
+    }
+    var z = Math.floor(Math.random() * 4);
+
+    if (z === 0) {
+      this.dir = "N";
+    } else if (z === 1) {
+      this.dir = "W";
+    } else if (z === 2) {
+      this.dir = "S";
+    } else {
+      this.dir = "E";
+    }
+  };
+
+  Beer.prototype.validPos = function (coord) {
+    var result = true
+    if (!this.board.validPosition(coord)) {
+      result = false;
+    } else {
+      this.board.snake.segments.forEach(function (segment) {
+        if (segment.equals(coord)) {
+          result = false;
+          return result;
+        }
+      })
+    }
+
+    return result;
   };
 
   Beer.prototype.replace = function () {
@@ -80,6 +168,7 @@
     if (this.head().equals(this.board.apple.position)) {
       this.growTurns += 3;
       Snake.DRUNK = false;
+      Snake.COFFEE = false;
       $('figure').removeAttr('style');
       return true;
     } else {
@@ -87,10 +176,34 @@
     }
   };
 
-  Snake.prototype.eatMagicApple = function () {
-    if (this.head().equals(this.board.magicApple.position)) {
-      this.growTurns += 3;
+  Snake.COFFEE = false;
+
+  Snake.prototype.drinkCoffee = function () {
+    if (this.head().equals(this.board.coffee.position)) {
       Snake.DRUNK = false;
+      Snake.COFFEE = true;
+      $('figure').removeAttr('style');
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  Snake.prototype.drinkEspresso = function () {
+    if (this.head().equals(this.board.espresso.position)) {
+      Snake.DRUNK = false;
+      Snake.COFFEE = true;
+      $('figure').removeAttr('style');
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  Snake.prototype.drinkLatte = function () {
+    if (this.head().equals(this.board.latte.position)) {
+      Snake.DRUNK = false;
+      Snake.COFFEE = true;
       $('figure').removeAttr('style');
       return true;
     } else {
@@ -102,6 +215,19 @@
     if (this.head().equals(this.board.magic.position)) {
       this.growTurns += 3;
       Snake.DRUNK = false;
+      Snake.COFFEE = false;
+      $('figure').removeAttr('style');
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  Snake.prototype.eatMagicApple = function () {
+    if (this.head().equals(this.board.magicApple.position)) {
+      this.growTurns += 3;
+      Snake.DRUNK = false;
+      Snake.COFFEE = false;
       $('figure').removeAttr('style');
       return true;
     } else {
@@ -111,11 +237,11 @@
 
   Snake.DRUNK = false;
 
-
   // TODO: DRY this out
   Snake.prototype.drinkBeer = function () {
     if (this.head().equals(this.board.beer.position)) {
       Snake.DRUNK = true;
+      Snake.COFFEE = false;
       $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
       $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
@@ -127,6 +253,7 @@
   Snake.prototype.drinkMoonshine = function () {
     if (this.head().equals(this.board.moonshine.position)) {
       Snake.DRUNK = true;
+      Snake.COFFEE = false;
       $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
       $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
@@ -138,6 +265,7 @@
   Snake.prototype.drinkVodka = function () {
     if (this.head().equals(this.board.vodka.position)) {
       Snake.DRUNK = true;
+      Snake.COFFEE = false;
       $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
       $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
@@ -149,6 +277,7 @@
   Snake.prototype.drinkMartini = function () {
     if (this.head().equals(this.board.martini.position)) {
       Snake.DRUNK = true;
+      Snake.COFFEE = false;
       $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
       $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
@@ -160,6 +289,7 @@
   Snake.prototype.drinkBourbon = function () {
     if (this.head().equals(this.board.bourbon.position)) {
       Snake.DRUNK = true;
+      Snake.COFFEE = false;
       $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
       $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
@@ -171,6 +301,7 @@
   Snake.prototype.drinkMargarita = function () {
     if (this.head().equals(this.board.margarita.position)) {
       Snake.DRUNK = true;
+      Snake.COFFEE = false;
       $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
       $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
@@ -182,6 +313,7 @@
   Snake.prototype.drinkAppletini = function () {
     if (this.head().equals(this.board.appletini.position)) {
       Snake.DRUNK = true;
+      Snake.COFFEE = false;
       $('figure').css("-webkit-animation", "myfirst 5s linear 0s infinite alternate")
       $('figure').css("animation", "myfirst 5s linear 0s infinite alternate")
       return true;
@@ -231,9 +363,15 @@
     // TODO: DRY this out
     if (this.eatApple()) { this.board.apple.replace();}
 
-    if (this.eatMagicApple()) { this.board.magicApple.replace(); }
+    if (this.drinkCoffee()) { this.board.coffee.replace(); }
+
+    if (this.drinkEspresso()) { this.board.espresso.replace(); }
+
+    if (this.drinkLatte()) { this.board.latte.replace(); }
 
     if (this.eatMagic()) { this.board.magic.replace(); }
+
+    if (this.eatMagicApple()) { this.board.magicApple.replace(); }
 
     if (this.drinkBeer()) { this.board.beer.replace(); }
 
@@ -280,11 +418,15 @@
 
   var Board = SG.Board = function (dim) {
     this.dim = dim;
+    this.index = 0;
 
     this.snake = new Snake(this);
     this.apple = new Apple(this);
-    this.magicApple = new Apple(this);
+    this.coffee = new Apple(this);
+    this.espresso = new Apple(this);
+    this.latte = new Apple(this);
     this.magic = new Apple(this);
+    this.magicApple = new Apple(this);
     this.beer = new Beer(this);
     this.vodka = new Beer(this);
     this.moonshine = new Beer(this);

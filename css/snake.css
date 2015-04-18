@@ -1,4 +1,4 @@
-html, body, figure, figcaption, ul, li {
+html, figure, figcaption, ul, li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,7 +20,7 @@ body {
 }
 
 h3.length {
-  color: #942C8D;
+  color: black;
   font-size: 24px;
   opacity: 0.7;
 }
@@ -70,45 +70,49 @@ li {
   opacity: 0.7;
 }
 
-.snake, .drunk-snake, .apple, .magic-apple, .magic {
+.snake, .drunk-snake, .apple, .magic, .magic-apple {
   -webkit-animation: mysecond 5s linear 0s infinite alternate;
   animation: mysecond 5s linear 0s infinite alternate;
 }
 
+.coffee, .espresso, .latte {
+  background-image: url("../images/coffee.png");
+}
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes myfirst {
-    0%   {background: red; opacity: 0.7;
+    0%   {
     -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
     transform: rotate(17deg)}
-    25%  {background: yellow; opacity: 0.7;
+    25%  {
     -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
     transform: rotate(-17deg)}
-    50%  {background: blue; opacity: 0.7;
+    50%  {
     -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
     transform: rotate(17deg)}
-    75%  {background: green; opacity: 0.7;
+    75%  {
       -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
     transform: rotate(-17deg)}
-    100% {background: red; opacity: 0.7;
+    100% {
       -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
       transform: rotate(17deg)}
 }
 
 /* Standard syntax */
 @keyframes myfirst {
-    0%   {background: red; opacity: 0.7;
+    0%   {
       -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
       transform: rotate(17deg)}
-    25%  {background: yellow; opacity: 0.7;
+    25%  {
       -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
       transform: rotate(-17deg)}
-    50%  {background: blue; opacity: 0.7;
+    50%  {
       -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
     transform: rotate(17deg)}
-    75%  {background: green; opacity: 0.7;
+    75%  {
       -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
     transform: rotate(-17deg)}
-    100% {background: red; opacity: 0.7;
+    100% {
       -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
       transform: rotate(17deg)}
 }
