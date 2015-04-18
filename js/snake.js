@@ -111,6 +111,8 @@
 
   Snake.DRUNK = false;
 
+
+  // TODO: DRY this out
   Snake.prototype.drinkBeer = function () {
     if (this.head().equals(this.board.beer.position)) {
       Snake.DRUNK = true;
@@ -226,46 +228,26 @@
     // allow turning again
     this.turning = false;
 
-    // maybe eat an apple
-    if (this.eatApple()) {
-      this.board.apple.replace();
-    }
+    // TODO: DRY this out
+    if (this.eatApple()) { this.board.apple.replace();}
 
-    if (this.eatMagicApple()) {
-      this.board.magicApple.replace();
-    }
+    if (this.eatMagicApple()) { this.board.magicApple.replace(); }
 
-    if (this.eatMagic()) {
-      this.board.magic.replace();
-    }
+    if (this.eatMagic()) { this.board.magic.replace(); }
 
-    if (this.drinkBeer()) {
-      this.board.beer.replace();
-    }
+    if (this.drinkBeer()) { this.board.beer.replace(); }
 
-    if (this.drinkMoonshine()) {
-      this.board.moonshine.replace();
-    }
+    if (this.drinkMoonshine()) { this.board.moonshine.replace(); }
 
-    if (this.drinkVodka()) {
-      this.board.vodka.replace();
-    }
+    if (this.drinkVodka()) { this.board.vodka.replace(); }
 
-    if (this.drinkBourbon()) {
-      this.board.bourbon.replace();
-    }
+    if (this.drinkBourbon()) { this.board.bourbon.replace(); }
 
-    if (this.drinkMartini()) {
-      this.board.martini.replace();
-    }
+    if (this.drinkMartini()) { this.board.martini.replace(); }
 
-    if (this.drinkAppletini()) {
-      this.board.appletini.replace();
-    }
+    if (this.drinkAppletini()) { this.board.appletini.replace(); }
 
-    if (this.drinkMargarita()) {
-      this.board.margarita.replace();
-    }
+    if (this.drinkMargarita()) { this.board.margarita.replace(); }
 
     // if not growing, remove tail segment
     if (this.growTurns > 0) {
