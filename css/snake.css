@@ -8,11 +8,6 @@ ul {
   list-style: none;
 }
 
-body {
-  font-family: sans-serif;
-  text-align: center;
-}
-
 .logo {
   width: 360px;
   height: 120px;
@@ -39,6 +34,11 @@ figure {
   border: 1px solid #5A5A5A;
   border-radius: 10px;
   background-color: #FAF6FF;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
 }
 
 .big-blue {
@@ -101,39 +101,39 @@ li {
 /* Chrome, Safari, Opera */
 @-webkit-keyframes myfirst {
     0%   {
-    -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
-    transform: rotate(17deg)}
+    -ms-transform: rotate(20deg); -webkit-transform: rotate(20deg);
+    transform: rotate(20deg)}
     25%  {
-    -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
-    transform: rotate(-17deg)}
+    -ms-transform: rotate(-20deg); -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg)}
     50%  {
-    -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
-    transform: rotate(17deg)}
+    -ms-transform: rotate(20deg); -webkit-transform: rotate(20deg);
+    transform: rotate(20deg)}
     75%  {
-      -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
-    transform: rotate(-17deg)}
+      -ms-transform: rotate(-20deg); -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg)}
     100% {
-      -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
-      transform: rotate(17deg)}
+      -ms-transform: rotate(20deg); -webkit-transform: rotate(20deg);
+      transform: rotate(20deg)}
 }
 
 /* Standard syntax */
 @keyframes myfirst {
     0%   {
-      -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
-      transform: rotate(17deg)}
+      -ms-transform: rotate(20deg); -webkit-transform: rotate(20deg);
+      transform: rotate(20deg)}
     25%  {
-      -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
-      transform: rotate(-17deg)}
+      -ms-transform: rotate(-20deg); -webkit-transform: rotate(-20deg);
+      transform: rotate(-20deg)}
     50%  {
-      -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
-    transform: rotate(17deg)}
+      -ms-transform: rotate(20deg); -webkit-transform: rotate(20deg);
+    transform: rotate(20deg)}
     75%  {
-      -ms-transform: rotate(-17deg); -webkit-transform: rotate(-17deg);
-    transform: rotate(-17deg)}
+      -ms-transform: rotate(-20deg); -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg)}
     100% {
-      -ms-transform: rotate(17deg); -webkit-transform: rotate(17deg);
-      transform: rotate(17deg)}
+      -ms-transform: rotate(20deg); -webkit-transform: rotate(20deg);
+      transform: rotate(20deg)}
 }
 
 /* Chrome, Safari, Opera */

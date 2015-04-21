@@ -154,7 +154,7 @@
         this.board.snake.move();
       }
 
-      if (this.board.index % 10 === 0 && SG.Snake.DRUNK) {
+      if (this.board.index % 8 === 0 && SG.Snake.DRUNK) {
         this.board.apple.move();
         this.board.coffee.move();
         this.board.espresso.move();
