@@ -36,10 +36,10 @@
     for (var i = 12; i < this.board.dim[0]; i++) {
       if (i == 14) {
         html += "<span class='big-black'>How to Play </span><br><br>"
-        html += "<img src='../images/coffee.png'></img> = coffee. Speeds the snake up<br>"
-        html += "<img src='../images/alcohol.png'></img> = alcohol. Makes the snake clumsy and its vision blurry<br>"
+        html += "<img src='./images/coffee.png'></img> = coffee. Speeds the snake up<br>"
+        html += "<img src='./images/alcohol.png'></img> = alcohol. Makes the snake clumsy and its vision blurry<br>"
         html += "<div class='magic-square'></div> = apple. The healthy choice. Makes the snake grow and cancels the effects of coffee and alcohol<br><br>"
-        html += "Use the arrow keys <img src='../images/arrows.png' height='36' width='48'></img> to move the snake<br><br>"
+        html += "Use the arrow keys <img src='./images/arrows.png' height='36' width='48'></img> to move the snake<br><br>"
         html += "<ul class='message'>Press the <b class='big-blue'>up key</b> to begin!</ul>";
       } else {
         html += "<ul>";
