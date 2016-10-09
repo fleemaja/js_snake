@@ -1,6 +1,6 @@
 # Drunken Snake
-[Live Demo]
-(http://htmlpreview.github.io/?https://github.com/fleemaja/js_snake/blob/master/html/snake.html)
+[Live Link]
+(https://fleemaja.github.io/js_snake/)
 
 
 A fun little javascript version of the classic video game [Snake](http://en.wikipedia.org/wiki/Snake_(video_game)). As a little twist on the game, the game rendering changes depending on whether the snake has become drunk, has injested coffee, or has made the healthy choice of eating an apple.
